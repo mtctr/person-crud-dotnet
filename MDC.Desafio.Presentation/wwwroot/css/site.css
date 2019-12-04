@@ -1,71 +1,148 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
+﻿
 html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    position: relative;
+    min-height: 100%;
+    font-family: "Roboto",sans-serif;    
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.container {
+    width: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+.col {
+    position: relative;
+    width: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    flex-basis: 0;    
+    flex-grow: 1;    
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+.card {
+    position: relative;
+    flex: 0 1 calc(25% - 1em);        
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    padding: 15px 15px 15px 15px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+.card__header {
+    border-bottom: 1px solid black;
 }
+
+.card__body {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-radius: 0;
+    flex: 1 1 auto;
+}
+
+.card__text {
+    font-size: .9rem;
+    font-weight: 400;
+    color: #747373;
+}
+
+.card__image {
+    vertical-align: middle;
+    border-style: none;
+    height:100px;
+    align-self:center;
+}
+
+.card__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 0;
+}
+.form-input {
+    box-sizing: content-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    height: auto;
+    padding: .6rem 0 .4rem 0;
+    margin: 0 0 .5rem 0;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-clip: padding-box;
+}
+
+.button {
+    color: #000;
+    background-color: #e0e0e0;
+    box-shadow: 0 5px 11px 0 #e0e0e0, 0 4px 15px 0 rgb(255, 255, 255);
+    outline: 0;
+    margin: .375rem;
+    text-transform: uppercase;
+    text-align: center;
+    word-wrap: break-word;
+    white-space: normal;
+    border: 0;
+    border-radius: .125rem;
+    padding: .84rem 2.14rem;
+    font-size: .81rem;
+    display: inline-block;
+    font-weight: 400;
+    vertical-align: middle;
+    text-decoration:none;
+}
+
+.button--submit {
+    background-color: #839bb2;
+}
+
+.button--hover:hover {
+    background-color: #c1bdbd;
+}
+
+
+@media screen and (min-width: 40em) {
+    .row--mobile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .card--mobile {
+        flex: 0 1 calc(50% - 1em) !important;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .card--desktop {
+        flex: 0 1 calc(25% - 1em) !important;
+    }
+}
+

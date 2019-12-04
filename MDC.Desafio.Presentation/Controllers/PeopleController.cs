@@ -3,7 +3,6 @@ using MDC.Desafio.Domain.Entities;
 using MDC.Desafio.Domain.Interfaces;
 using MDC.Desafio.Domain.Services;
 using MDC.Desafio.Presentation.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MDC.Desafio.Presentation.Controllers
@@ -21,14 +20,9 @@ namespace MDC.Desafio.Presentation.Controllers
         // GET: People
         public IActionResult Index()
         {
-            return View();
-        }
-
-        // GET: People/Details/5
-        public IActionResult Details(int id)
-        {
-            return View();
-        }
+            var people = _personService.List();            
+            return View(people);
+        }      
 
         // GET: People/Create
         public IActionResult Create()
@@ -56,52 +50,6 @@ namespace MDC.Desafio.Presentation.Controllers
             {
                 return View();
             }
-        }
-
-        // GET: People/Edit/5
-        public IActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: People/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: People/Delete/5
-        public IActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: People/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        }        
     }
 }

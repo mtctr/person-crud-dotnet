@@ -38,6 +38,7 @@ namespace MDC.Desafio.Infra.Repositories
             return _context.People
                 .Include(x => x.Address)
                 .Include(x => x.PersonPhotos)
+                .Where(x => x.Active)
                 .AsNoTracking()
                 .ToList();
         }

@@ -1,0 +1,52 @@
+﻿@model List<MDC.Desafio.Domain.Entities.Person>
+@{
+    ViewData["Title"] = "People";
+}
+
+    <h1>@ViewData["Title"]</h1>
+
+    <div class="row">
+        <div class="col">
+            <a class="button button--hover" asp-action="Create" asp-controller="People">Add</a>
+        </div>
+    </div>
+
+    <section class="row row--desktop row--mobile">
+
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <article class="card card--desktop card--mobile">
+                    <div class="card__header">
+                        <div class="row">
+                            <div class="col">
+                                <span class="card__title">@item.PersonName</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div class="row">
+                            <div class="col">
+                                <img class="card__image" src="data:image/jpeg;base64,@Convert.ToBase64String(item.PersonPhotos.FirstOrDefault().Photo64)" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span class="card__text">@item.Cpf</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span class="card__text">@item.Email</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span class="card__text">@($"{item.Address.City}/{item.Address.State}")</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        }
+    </section>
